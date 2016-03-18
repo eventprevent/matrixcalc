@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>SKB Kontur test task</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="clearfix">
+    <div class="control-field">
+      <button class="multiply-btn" type="button">Умножить матрицы</button>
+      <div class="control-block">
+        <button class="btn clean-btn" type="button">
+          <span class="konturIconic konturIconic-undo"></span>
+          Очистить матрицы
+        </button>
+        <button class="btn swap-btn" type="button">
+          <span class="konturIconic konturIconic-arrow-parallel-vertical"></span>
+          Поменять матрицы местами
+        </button>
+      </div>
+      <div class="control-block-matrix">
+        <input type="radio" name="matrix-name" id="a-matrix">
+        <label for="a-matrix">
+        Матрица A
+        </label>
+        <input type="radio" name="matrix-name" id="b-matrix" checked>
+        <label for="b-matrix">
+        Матрица B
+        </label>
+      </div>
+      <div class="control-block-matrix">
+        <button class="btn btn-row add-row" type="button">
+          <span class="konturIconic konturIconic-add"></span>
+          Добавить
+        </button>
+        <button class="btn btn-row delete-row" type="button">
+          <span class="konturIconic konturIconic-remove"></span>
+          Удалить
+        </button>
+        <span>строку</span>
+      </div>
+      <div class="control-block-matrix">
+        <button class="btn btn-col add-col" type="button">
+          <span class="konturIconic konturIconic-add"></span>
+          Добавить
+        </button>
+        <button class="btn btn-col delete-col" type="button">
+          <span class="konturIconic konturIconic-remove"></span>
+          Удалить
+        </button>
+        <span>столбец</span>
+      </div>
+      <div class="error-text"></div>
+    </div>
+    <div class="matrix-field clearfix">
+      <div class="container">
+      <div class="matrix result-matrix">
+        <div class="matrix-row">
+          <input type="number" placeholder="c1,1" disabled tabindex="-1">
+          <input type="number" placeholder="c1,2" disabled tabindex="-1">
+          <input type="number" placeholder="c1,3" disabled tabindex="-1">
+        </div>
+        <div class="matrix-row">
+          <input type="number" placeholder="c2,1" disabled tabindex="-1">
+          <input type="number" placeholder="c2,2" disabled tabindex="-1">
+          <input type="number" placeholder="c2,3" disabled tabindex="-1">
+        </div>
+        <div class="matrix-row">
+          <input type="number" placeholder="c3,1" disabled tabindex="-1">
+          <input type="number" placeholder="c3,2" disabled tabindex="-1">
+          <input type="number" placeholder="c3,3" disabled tabindex="-1">
+        </div>
+        <div class="matrix-row">
+          <input type="number" placeholder="c4,1" disabled tabindex="-1">
+          <input type="number" placeholder="c4,2" disabled tabindex="-1">
+          <input type="number" placeholder="c4,3" disabled tabindex="-1">
+        </div>
+      </div>
+      <div class="matrix first-matrix">
+        <div class="matrix-title first-title">
+          A
+        </div>
+        <div class="matrix-row">
+          <input type="number" placeholder="a1,1">
+          <input type="number" placeholder="a1,2">
+        </div>
+        <div class="matrix-row">
+          <input type="number" placeholder="a2,1">
+          <input type="number" placeholder="a2,2">
+        </div>
+        <div class="matrix-row">
+          <input type="number" placeholder="a3,1">
+          <input type="number" placeholder="a3,2">
+        </div>
+        <div class="matrix-row">
+          <input type="number" placeholder="a4,1">
+          <input type="number" placeholder="a4,2">
+        </div>
+      </div>
+      <div class="matrix second-matrix">
+        <div class="matrix-title second-title">
+          B
+        </div>
+        <div class="matrix-row">
+          <input type="number" placeholder="b1,1">
+          <input type="number" placeholder="b1,2">
+          <input type="number" placeholder="b1,3">
+        </div>
+        <div class="matrix-row">
+          <input type="number" placeholder="b2,1">
+          <input type="number" placeholder="b2,2">
+          <input type="number" placeholder="b2,3">
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!--[if (IE 8)]>
+      <style type="text/css">
+        .control-block-matrix input {
+          display: inline-block;
+        }
+        .control-block-matrix label {
+          padding-left: 0;
+        }
+        input[type="number"][disabled] {
+          background-color: #eeeeee;
+        }
+      </style>
+    <![endif]-->
+    <script type="text/javascript" src="js/eventListener.polyfill.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

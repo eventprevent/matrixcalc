@@ -1,0 +1,406 @@
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Segoe UI';
+  src:
+    url('../fonts/segoeui.eot?#iefix')  format('embedded-opentype'),
+    url('../fonts/segoeui.ttf');
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'konturIconic';
+  src:
+    url('../fonts/kontur-iconic-eco-webfont.eot?#iefix')  format('embedded-opentype'),
+    url('../fonts/kontur-icon.ttf') format('truetype');
+}
+
+.konturIconic {
+    font-family: 'konturIconic';
+    font-size: 14px;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+.konturIconic-undo:before, .icon_E012:before { content: "\e012"; }
+.konturIconic-add:before, .icon_E00D:before { content: "\e00d"; }
+.konturIconic-remove:before, .icon_E01E:before { content: "\e01e"; }
+.konturIconic-arrow-parallel-vertical:before, .icon_E01F:before { content: "\e01f"; }
+
+body {
+  min-width: 985px;
+  min-height: 100%;
+
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #404040;
+  //background: #fff url('../img/bg-body.png') repeat-y;
+  background-image: linear-gradient(to right, #bcbcbc 335px, #ffffff 335px, #ffffff 100%);
+  background-repeat: repeat-y;
+}
+
+body.changes {
+  //background: #fff url('../img/bg-body-changes.png') repeat-y;
+  background-image: linear-gradient(to right, #5199db 335px, #ffffff 335px, #ffffff 100%);
+  background-repeat: repeat-y;
+}
+
+body.error {
+  //background: #fff url('../img/bg-body-error.png') repeat-y;
+  background-image: linear-gradient(to right, #f6c1c0 335px, #ffffff 335px, #ffffff 100%);
+  background-repeat: repeat-y;
+}
+
+button,
+input {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #404040;
+}
+
+.control-field {
+  float: left;
+  padding: 0 30px;
+  width: 275px;
+  background-color: transparent;
+}
+
+.matrix-field {
+  min-height: 350px;
+  margin-left: 335px;
+  padding: 15px 40px 40px;
+  font-size: 0;
+  line-height: 0;
+}
+
+.container {
+  float: left;
+}
+
+.multiply-btn {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 55px;
+  margin-left: 1px;
+  padding: 9px 13px 9px 19px;
+  color: #fff;
+  background-color: #3b950f;
+  border-radius: 3px;
+  border: none;
+  box-shadow: -0.3px 0 0 1px rgba(26, 103, 6, 0.3);
+}
+
+.multiply-btn::after,
+.multiply-btn::before {
+  content: '';
+  position: absolute;
+  width: 23px;
+  height: 15px;
+  background-color: #3b950f;
+  border-radius: 3px;
+}
+
+.multiply-btn::after {
+  top: 5.9px;
+  right: -9.9px;
+  z-index: 2;
+  transform: rotate(60deg);
+  box-shadow: 0px -0.8px 0 0px rgba(26, 103, 6, 0.3);
+}
+
+.multiply-btn::before {
+  top: 17px;
+  right: -9.9px;
+  z-index: 0;
+  transform: rotate(-60deg);
+  box-shadow: 0px 0.8px 0 0px rgba(26, 103, 6, 0.3);
+}
+
+.multiply-btn:focus {
+  outline: none;
+  border-color: #fff;
+  box-shadow: 0 0 0 2px #5199db;
+}
+
+.multiply-btn:focus::after {
+  border-color: #fff;
+  box-shadow: 0.5px -2.2px 0 -0.6px #5199db;
+}
+
+.multiply-btn:focus::before {
+  border-color: #fff;
+  box-shadow: 0.5px 2.2px 0 -0.6px #5199db;
+}
+
+.multiply-btn:hover,
+.multiply-btn:hover::after,
+.multiply-btn:hover::before {
+  background-color: #3a8b12;
+}
+
+.multiply-btn:active {
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.3),
+    -0.3px 0 0 1px rgba(26, 103, 6, 0.3);
+}
+
+.multiply-btn:active::after {
+  box-shadow:
+    inset 0 2px 1px -1px rgba(0, 0, 0, 0.3),
+    0px -0.8px 0 0px rgba(26, 103, 6, 0.3);
+}
+
+.multiply-btn:active::before {
+  box-shadow: 0px 0.8px 0 0px rgba(26, 103, 6, 0.3);
+}
+
+.btn {
+  margin-right: 6px;
+  margin-left: 1px;
+  padding: 4px 6px;
+  border: none;
+  box-shadow: 0 0 0 1px rgba(3, 3, 3, 0.2);
+  border-radius: 2px;
+  background-image: linear-gradient(to bottom, #fff, #ececec);
+  box-sizing: content-box;
+}
+
+.clean-btn,
+.swap-btn {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.control-block {
+  margin-bottom: 65px;
+}
+
+.control-block-matrix {
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.control-block-matrix label {
+  position: relative;
+  margin-right: 15px;
+  padding-left: 23px;
+  cursor: pointer;
+}
+
+input + label::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 1px;
+  margin-top: -7px;
+  width: 14px;
+  height: 14px;
+  background-image: linear-gradient(to bottom, #fcfcfc, #eeeeee);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(3, 3, 3, 0.2);
+}
+
+input[type="radio"]:checked + label::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 4px;
+  margin-top: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #404040;
+}
+
+.btn-row,
+.btn-col {
+  padding-right: 9px;
+}
+
+.btn:hover {
+  background-image: linear-gradient(to bottom, #f2f2f2, #dfdfdf);
+}
+
+input + label:hover::before {
+  background-image: linear-gradient(to bottom, #f1f1f1, #e1e1e1);
+}
+
+input + label:active::before {
+  background-color: #d9d9d9;
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(3, 3, 3, 0.2);
+}
+
+.btn:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px #5199db;
+}
+
+.matrix {
+  position: relative;
+  float: left;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  padding: 10px 10px;
+}
+
+.second-matrix {
+  clear: left;
+}
+
+/*for ie8*/
+.matrix:before,
+.matrix:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  box-sizing: border-box;
+  border-top: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+}
+/*for ie8*/
+
+.matrix::before,
+.matrix::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  box-sizing: border-box;
+  border-top: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+}
+
+/*for ie8*/
+.matrix:before {
+  left: 0;
+  border-left: 2px solid #404040;
+}
+
+.matrix:after {
+  right: 0;
+  border-right: 2px solid #404040;
+}
+/*for ie8*/
+
+.matrix::before {
+  left: 0;
+  border-left: 2px solid #404040;
+}
+
+.matrix::after {
+  right: 0;
+  border-right: 2px solid #404040;
+}
+
+.matrix-row {
+  font-size: 0;
+  line-height: 0;
+}
+
+input[type="number"] {
+  display: inline-block;
+  vertical-align: top;
+  padding: 8px 0 0;
+  width: 38px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.matrix + .matrix input {
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.matrix-row input+input {
+  margin-left: 10px;
+}
+
+.matrix-row + .matrix-row input {
+  margin-top: 10px;
+}
+
+.matrix-title {
+  position: absolute;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.first-title {
+  top: 50%;
+  left: 100%;
+  margin-top: -10px;
+  margin-left: 20px;
+}
+
+.second-title {
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 14px;
+}
+
+input:not(:disabled):focus,
+input:focus + label::before {
+  box-shadow: 0 0 0 2px #5199db;
+}
+
+.btn:active {
+  outline: none;
+  background-color: #d9d9d9;
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(3, 3, 3, 0.2);
+}
+
+.multiply-btn[disabled] {
+  background: #f2f2f2;
+  color: #808080;
+}
+
+.btn:disabled,
+.multiply-btn:disabled,
+.multiply-btn:disabled::after,
+.multiply-btn:disabled::before {
+  background: #f2f2f2;
+  color: #808080;
+}
+
+.error-text {
+  margin: 20px -30px 0;
+  padding: 30px;
+  background-color: transparent;
+  color: #da0902;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
